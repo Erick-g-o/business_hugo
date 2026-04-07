@@ -1,6 +1,7 @@
 // main.js
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/books';
+const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const API_URL = import.meta.env.VITE_API_URL || (isLocalhost ? 'http://localhost:3000/api/books' : '/api/books');
 let allBooks = [];
 let favoriteBooks = JSON.parse(localStorage.getItem('bbl_favorites')) || [];
 let currentCategory = '';

@@ -56,6 +56,10 @@ app.get('/api/books', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Backend de la librería ejecutándose en el puerto ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Backend de la librería ejecutándose en el puerto ${PORT}`);
+    });
+}
+
+module.exports = app;

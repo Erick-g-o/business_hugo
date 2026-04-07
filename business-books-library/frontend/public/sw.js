@@ -4,7 +4,6 @@ const CACHE_NAME = 'bbl-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/style.css',
   '/manifest.json'
 ];
 
